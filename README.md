@@ -14,5 +14,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Pour ce  le front tu doit que  faire ng serve  pour run du server 
+Pour  le front tu doit que  faire ng serve  pour run du server 
 (j'ai pas fait les test unitaires)
