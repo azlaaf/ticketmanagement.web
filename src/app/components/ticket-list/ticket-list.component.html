@@ -1,0 +1,76 @@
+<div class="ticket-list p-6 bg-gray-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold mb-4">Ticket List</h2>
+
+  <div class="mb-4 flex items-center">
+    <input
+      type="text"
+      placeholder="Search By Description"
+      [(ngModel)]="searchTerm"
+      (keyup)="applyFilter()"
+      class="border border-gray-300 rounded-lg p-2 mr-2 w-full sm:w-auto"
+    />
+    <button
+      mat-button
+      color="accent"
+      (click)="applyFilter()">
+      Search
+    </button>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="min-w-full bg-white border border-gray-200 rounded-lg shadow-lg">
+    <!-- Colonne ID -->
+    <ng-container matColumnDef="ticketId">
+      <th mat-header-cell *matHeaderCellDef class="px-4 py-2 text-left border-b ticket-id-header"> Ticket ID </th>
+      <td mat-cell *matCellDef="let ticket" class="px-4 py-2 border-b ticket-id-cell"> {{ ticket.ticketId }} </td>
+    </ng-container>
+
+    <!-- Colonne Description -->
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell *matHeaderCellDef class="px-4 py-2 text-left border-b description-header"> Description </th>
+      <td mat-cell *matCellDef="let ticket" class="px-4 py-2 border-b description-cell"> {{ ticket.description }} </td>
+    </ng-container>
+
+    <!-- Colonne Statut -->
+    <ng-container matColumnDef="Status">
+      <th mat-header-cell *matHeaderCellDef class="px-4 py-2 text-left border-b status-header"> Statut </th>
+      <td mat-cell *matCellDef="let ticket" class="px-4 py-2 border-b status-cell"> {{ ticket.status }} </td>
+    </ng-container>
+
+    <!-- Colonne Date -->
+    <ng-container matColumnDef="Date">
+      <th mat-header-cell *matHeaderCellDef class="px-4 py-2 text-left border-b date-header"> Date </th>
+      <td mat-cell *matCellDef="let ticket" class="px-4 py-2 border-b date-cell"> {{ ticket.date }} </td>
+    </ng-container>
+
+    <!-- Colonne Actions -->
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell *matHeaderCellDef class="px-4 py-2 text-left border-b actions-header"> Actions </th>
+      <td mat-cell *matCellDef="let ticket" class="px-4 py-2 border-b actions-cell">
+        <span
+          class="update-text"
+          [routerLink]="['/edit-ticket', ticket.ticketId]">
+          Update
+        </span>
+        <span
+          class="delete-text"
+          (click)="deleteTicket(ticket.ticketId, ticket)">
+          Delete
+        </span>
+      </td>
+    </ng-container>
+
+    <!-- Ligne d'en-tête -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="bg-gray-200"></tr>
+    <!-- Ligne de données -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="hover:bg-gray-100"></tr>
+  </table>
+
+  <!-- Paginator (facultatif) -->
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+</div>
+
+<button
+  routerLink="create-ticket"
+  class="custom-button ml-4">
+  Add New
+</button>

@@ -1,0 +1,91 @@
+/* Style global pour le body */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Alignement en colonne */
+  min-height: 100vh; /* Minimum hauteur pour occuper l'écran */
+}
+
+header {
+  display: flex; /* Utilise Flexbox */
+  justify-content: space-between; /* Espacement entre le titre et la navigation */
+  align-items: center; /* Centre verticalement les éléments */
+  background-color: #4CAF50;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+nav ul {
+  display: flex; /* Utilise Flexbox pour la liste de navigation */
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px; /* Espacement entre les éléments de la navigation */
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a.active {
+  text-decoration: underline;
+}
+
+/* Style principal */
+main {
+  flex: 1; /* Prend tout l'espace disponible avant le footer */
+  padding: 20px;
+  max-width: 1200px; /* Largeur maximale pour un conteneur principal */
+  margin: 0 auto; /* Centre le conteneur */
+}
+
+/* Style du footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  /* Changer de position: relative à position: absolute et ajouter bottom: 0 */
+  position: relative; /* Enlève cette ligne */
+  position: absolute; /* Assure que le footer reste au bas de la page */
+  bottom: 0; /* Positionne le footer en bas */
+}
+
+/* Media Queries pour le responsive design */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column; /* Stack les éléments en colonne sur petits écrans */
+    text-align: center; /* Centre le texte sur petits écrans */
+  }
+
+  nav ul {
+    flex-direction: column; /* Liste en colonne sur petits écrans */
+  }
+
+  nav ul li {
+    margin: 10px 0; /* Espacement vertical entre les éléments */
+  }
+
+  header h1 {
+    font-size: 24px; /* Taille de police pour le titre */
+  }
+}
+
+@media (min-width: 601px) {
+  header h1 {
+    font-size: 32px; /* Taille de police pour le titre sur écrans plus larges */
+  }
+
+  nav ul li {
+    margin: 0 20px; /* Espacement plus large entre les éléments */
+  }
+}

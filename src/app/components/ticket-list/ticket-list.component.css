@@ -1,0 +1,49 @@
+/* Style pour toutes les colonnes (en-têtes et cellules) */
+.ticket-id-header,
+.description-header,
+.status-header,
+.date-header,
+.actions-header {
+  background-color: #38a169 !important; /* Vert pour l'en-tête */
+  color: white !important; /* Texte en blanc */
+  font-weight: bold;
+}
+
+.ticket-id-cell,
+.description-cell,
+.status-cell,
+.date-cell,
+.actions-cell {
+  background-color: #e6f5ea; /* Vert clair pour les cellules */
+}
+
+/* Style pour le bouton personnalisé */
+.custom-button {
+  background-color: #38a169; /* Couleur de fond verte */
+  color: white; /* Couleur du texte par défaut en blanc */
+  border: none; /* Enlève toute bordure */
+  border-radius: 0; /* Rend le bouton rectangulaire */
+  padding: 0.5rem 1rem; /* Ajuste le remplissage pour un aspect rectangulaire */
+  font-weight: bold; /* Met le texte en gras */
+  transition: background-color 0.3s; /* Ajoute une transition douce pour la couleur de fond */
+}
+
+.custom-button:hover {
+  background-color: #2f7a4c; /* Couleur de fond au survol */
+  color: white; /* La couleur du texte reste blanche au survol */
+}
+
+.update-text {
+  color: #4B0082; /* Mauve foncé */
+  text-decoration: underline; /* Ligne soulignée */
+  cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+  margin-right: 1rem; /* Espacement entre "Update" et "Delete" */
+  font-weight: bold; /* Texte en gras */
+}
+
+.delete-text {
+  color: #4B0082; /* Mauve foncé */
+  text-decoration: underline; /* Ligne soulignée */
+  cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+  font-weight: bold; /* Texte en gras */
+}

@@ -1,0 +1,37 @@
+<div class="p-6 shadow bg-white rounded-lg">
+  <h2 class="text-2xl font-bold mb-4">{{ isEditMode ? 'Edit Ticket' : 'Create New Ticket' }}</h2>
+
+  <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+    <div class="w-full flex flex-wrap">
+      <mat-form-field class="w-full">
+        <mat-label>Description</mat-label>
+        <input type="text" matInput placeholder="Description" formControlName="description" />
+      </mat-form-field>
+    </div>
+
+    <div class="w-full flex flex-wrap">
+      <mat-form-field class="w-full">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="Open">Open</mat-option>
+          <mat-option value="Closed">Closed</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="w-full flex flex-wrap">
+      <mat-form-field class="w-full">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="w-full flex justify-end">
+      <button type="submit" mat-button color="accent" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+        {{ isEditMode ? 'Update Ticket' : 'Add Ticket' }}
+      </button>
+    </div>
+  </form>
+</div>

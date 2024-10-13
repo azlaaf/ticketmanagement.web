@@ -1,0 +1,57 @@
+/* Conteneur global */
+.p-6 {
+  padding: 1rem; /* Réduction de l'espacement global */
+}
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Ombre plus légère pour un effet plus discret */
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.rounded-lg {
+  border-radius: 6px; /* Légère rondeur pour un effet propre */
+}
+
+.text-2xl {
+  font-size: 1.5rem; /* Taille du titre réduite pour plus de sobriété */
+  color: #333; /* Couleur plus douce pour le texte du titre */
+  margin-bottom: 1rem; /* Espacement réduit sous le titre */
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+
+
+/* Style simplifié des boutons */
+button[mat-button] {
+  background-color: #4caf50; /* Vert simple pour le bouton */
+  color: white;
+  padding: 0.5rem 1.5rem; /* Taille du bouton plus réduite */
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease; /* Transition plus rapide */
+}
+
+button[mat-button]:hover {
+  background-color: #43a047; /* Vert légèrement plus foncé au survol */
+}
+
+/* Ajustement pour mobile */
+@media (max-width: 768px) {
+  .p-6 {
+    padding: 0.75rem;
+  }
+
+  button[mat-button] {
+    width: 100%;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+}
